@@ -1,14 +1,14 @@
 [[servers]]
-host = "ldap-ad-sav.gslb.gac.gulfaero.com"
+host = "ldap.domain.com"
 #port = 636
 port = 389
 use_ssl = false
 start_tls = false
 ssl_skip_verify = false
-bind_dn = "CN=service-appmgr-unx-prd,OU=Service Accounts,OU=Savannah,DC=gac,DC=gulfaero,DC=com"
-bind_password = "Ge0rgeUsa4sale!"
+bind_dn = "CN=service-account,OU=Service Accounts,OU=Atlanta,DC=domain,DC=com"
+bind_password = "Pa$$word1!"
 search_filter = "(sAMAccountName=%s)"
-search_base_dns = ["dc=gac,dc=gulfaero,dc=com"]
+search_base_dns = ["dc=domain,dc=com"]
 
 [servers.attributes]
 name = "givenName"
@@ -17,22 +17,22 @@ member_of = "memberOf"
 email =  "userPrincipalName"
 
 [[servers.group_mappings]]
-group_dn = "cn=ittools,ou=groups,ou=savannah,dc=gac,dc=gulfaero,dc=com"
+group_dn = "cn=ittools,ou=groups,ou=Atlanta,dc=domain,dc=com"
 org_role = "Admin"                      # Grafana Admin role
 grafana_admin = true
 
 [[servers.group_mappings]]
-group_dn = "cn=ocp_admin,ou=groups,ou=savannah,dc=gac,dc=gulfaero,dc=com"
+group_dn = "cn=ocp_admin,ou=groups,ou=Atlanta,dc=domain,dc=com"
 org_role = "Admin"                     # Grafana Viewer role
 
 [[servers.group_mappings]]
-group_dn = "cn=tfs_admin,ou=groups,ou=savannah,dc=gac,dc=gulfaero,dc=com"
+group_dn = "cn=tfs_admin,ou=groups,ou=Atlanta,dc=domain,dc=com"
 org_role = "Editor"                     # Grafana Editor role
 
 [[servers.group_mappings]]
-group_dn = "cn=Infra_VMWare,ou=groups,ou=savannah,dc=gac,dc=gulfaero,dc=com"
+group_dn = "cn=Infra_VMWare,ou=groups,ou=Atlanta,dc=domain,dc=com"
 org_role = "Editor"                     # Grafana Editor Role
 
 [[servers.group_mappings]]
-group_dn = "cn=all_gulfstream_people,ou=powerbipro,ou=azuregroups,ou=groups,ou=savannah,dc=gac,dc=gulfaero,dc=com"
+group_dn = "cn=all_people,ou=powerbipro,ou=azuregroups,ou=groups,ou=Atlanta,dc=domain,dc=com"
 org_role = "Viewer"                     # Grafana Viewer role
